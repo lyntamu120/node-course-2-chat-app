@@ -69,8 +69,8 @@ $('#message-form').on('submit', function(e) {
     e.preventDefault();
 
     var messageTextBox = $('[name=message]');
+    // console.log('socket id from chat.js', socket.id);
     socket.emit('createMessage', {
-        from: 'User',
         text: messageTextBox.val()
     }, function() {
         messageTextBox.val('');
